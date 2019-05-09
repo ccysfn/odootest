@@ -1,34 +1,23 @@
 # -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
 {
-    'name': "jyinspur",
-
-    'summary': """
-        jyinspur soft""",
-
+    'name': 'Mail Enterprise',
+    'category': 'Discuss',
+    'depends': ['mail'],
     'description': """
-        jyinspur soft
-    """,
+Bridge module for mail and enterprise
+=====================================
 
-    'author': "jyinspur-cao",
-    'website': "http://www.inspur.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
+Display a preview of the last chatter attachment in the form view for large
+screen devices.
+""",
     'data': [
-        'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/mail_enterprise_templates.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
+    'qweb': [
+        'static/src/xml/mail_enterprise.xml',
     ],
+    'auto_install': True,
+    'license': 'OEEL-1',
 }
