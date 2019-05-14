@@ -6,18 +6,49 @@
       <field name="name">jyinspur list</field>
       <field name="model">jyinspur.soft</field>
       <field name="arch" type="xml">
-        <tree>
+	     <form>
+		 <header>
+		 <button name='提交'>
+		 <button name='取消提交'>
+		 <button name='审批通过'>
+		 <button name='审批不通过'>
+		    <field name="state" widget="statusbar" statusbar_visible="draft,processing,done" readonly="1"/>
+		 </header> 
+        <sheet>
+		<group>
+		  <group>
           <field name="name"/>
           <field name="ggxh"/>
-          <field name="soft_type"/>  
+          <field name="soft_type"/> 
+          </group>
+          <group>		  
           <field name="price"/>
           <field name="jldw"/>  
           <field name="description"/>
           <field name="qm"/>
-        </tree>
+		  </group>
+		  </group>
+        </sheet>
+		</form>
       </field>
     </record>
     
+	 <record id="product_tree" model="ir.ui.view">
+            <field name="name">product.tree</field>
+            <field name="model">jyinspur.soft</field>
+            <field name="arch" type="xml">
+                <tree string="soft Order">
+				     <field name="name"/>
+          <field name="ggxh"/>
+          <field name="soft_type"/> 
+			<field name="price"/>
+          <field name="jldw"/>  
+          <field name="description"/>
+          <field name="qm"/>
+           <field name="state">		  
+                </tree>
+            </field>
+        </record>
 
     <!-- actions opening views on models -->
     

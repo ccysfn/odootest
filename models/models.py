@@ -13,6 +13,7 @@ class soft(models.Model):
     description = fields.Text('描述')
     jldw = fields.Many2one('uom.uom',string='单位')
     qm = fields.Char(string='全名',compute='qm_compute')  #compute为调用函数名
+	state = fields.Selection([('draft','未提交'),('processing','已提交'),('done','已审批')],readonly=True,string='审批状态',default='draft')
     
     
     @api.depends('name','ggxh')  #填入需要的参数
